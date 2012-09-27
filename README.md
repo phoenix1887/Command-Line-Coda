@@ -1,21 +1,43 @@
 Command-Line-Coda
 =================
 
-Give Mac's Text Editor "Coda" / "Coda 2" file-opening capabilities on your command line. Open one more more files in coda with the command:
+Open files and data in Coda / Coda 2 from the Command Line. The popular Mac text editor gets its missing command line function....
+
+Open one or multiple files with:
 
 coda filename1 filename2 filename3 filename4 etc...
 
-
+-----------------------------------------------------------------------------------------------------
 
 To install, copy and paste this line of code into your Terminal:
 
-bp=~/.bash_profile; echo "" >> $bp; echo "" >> $bp; echo "# Command Line Coda" >> $bp; echo 'function coda()' >> $bp; echo '{' >> $bp; echo 'open -a /Applications/Coda\ 2.app/Contents/MacOS/Coda\ 2 "$@"' >> $bp; echo '}' >> $bp;
+echo "IyBDb21tYW5kIExpbmUgQ29kYQpmdW5jdGlvbiBjb2RhKCkKewoJY2w9Ii9BcHBsaWNhdGlvbnMvQ29kYSAyLmFwcC9Db250ZW50cy9NYWNPUy9Db2RhIDIiOwoJaWYgWyAhIC1mICIkY2wiIF07IHRoZW4gZWNobyAiV2hlcmUgaXMgeW91ciBDb2RhLmFwcCBmaWxlPyBGaW5kIGFuZCB0aGVuIHVwZGF0ZSBsb2NhdGlvbiBpbiB+Ly5iYXNoX3Byb2ZpbGUuIjsgZmk7CglpZiBbICIkQCIgIT0gIiIgXSAyPiAvZGV2L251bGw7IHRoZW4KCQlvcGVuIC1hICIkY2wiICIkQCI7CgllbHNlCgkJcmVhZCBkYXRhOwoJCXRtcD1gbWt0ZW1wICIvdG1wL0NvZGFTdGRpbi5YWFhYWFgiYCIudHh0IjsKCQllY2hvIC1uICIke2RhdGF9IiA+ICIkdG1wIgoJCWNvZGEgIiR0bXAiOwoJZmkKfQ==" | base64 -D >> ~/.bash_profile;
 
-This adds the code:
+And then open a new terminal.
 
+------------------------------------------------------------------------------------------------------
+
+Or you can manually add this code to your bash profile (~/.bash_profile):
+
+# Command Line Coda
 function coda()
 {
-open -a /Applications/Coda\ 2.app/Contents/MacOS/Coda\ 2 "$@"
-}
+  cl="/Applications/Coda 2.app/Contents/MacOS/Coda 2";
+	if [ ! -f "$cl" ]; then echo "Where is your Coda.app file? Find and then update location in ~/.bash_profile."; fi;
+	if [ "$@" != "" ] 2> /dev/null; then
+		open -a "$cl" "$@";
+	else
+		read data;
+		tmp=`mktemp "/tmp/CodaStdin.XXXXXX"`".txt";
+		echo -n "${data}" > "$tmp"
+		coda "$tmp";
+	fi
+  
+------------------------------------------------------------------------------------------------------
 
-to your bash profile (which is code that runs when you start a terminal. Now you can call the function coda with any number of input files and the terminal will call them to be opened with Coda. 
+
+To Do:
+
+- Flags? Do we need any?
+- Support the * character? coda Febru*
+}
