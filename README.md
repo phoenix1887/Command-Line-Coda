@@ -19,10 +19,9 @@ And then open a new terminal.
 
 Or you can manually add this code to your bash profile (~/.bash_profile):
 
-# Command Line Coda
 function coda()
 {
-  cl="/Applications/Coda 2.app/Contents/MacOS/Coda 2";
+ 	cl="/Applications/Coda 2.app/Contents/MacOS/Coda 2";
 	if [ ! -f "$cl" ]; then echo "Where is your Coda.app file? Find and then update location in ~/.bash_profile."; fi;
 	if [ "$@" != "" ] 2> /dev/null; then
 		open -a "$cl" "$@";
@@ -31,7 +30,8 @@ function coda()
 		tmp=`mktemp "/tmp/CodaStdin.XXXXXX"`".txt";
 		echo -n "${data}" > "$tmp"
 		coda "$tmp";
-	fi
+	fi;
+}
   
 ------------------------------------------------------------------------------------------------------
 
@@ -40,4 +40,3 @@ To Do:
 
 - Flags? Do we need any?
 - Support the * character? coda Febru*
-}
