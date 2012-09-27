@@ -7,6 +7,10 @@ Open one or multiple files with:
 
 coda filename1 filename2 filename3 filename4 etc...
 
+or pipe straight data into coda which will be opened in a new file:
+
+du -m ~/ | sort -nr | head -n 100 | coda
+
 -----------------------------------------------------------------------------------------------------
 
 To install, copy and paste this line of code into your Terminal:
