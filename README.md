@@ -1,28 +1,12 @@
 Command-Line-Coda
 =================
 
-Give Mac's Text Editor "Coda" / "Coda 2" file-opening capabilities on your command line
-
-
-To install, copy and paste this code into your Terminal:
-
-
-
-echo 'function coda()
-{
-  open -a /Applications/Coda\ 2.app/Contents/MacOS/Coda\ 2 "$@"
-}' >> ~/.bash_profile &
-
-
-
-
-To use, open a new terminal window and type the command:
-
-
-coda filename
-
-
-to open the file "filename" in Coda. You can also open multiple files by separating them with a space.
-
+Give Mac's Text Editor "Coda" / "Coda 2" file-opening capabilities on your command line. Open one more more files in coda with the command:
 
 coda filename1 filename2 filename3 filename4 etc...
+
+
+
+To install, copy and paste this line of code into your Terminal:
+
+echo "" >> ~/.bash_profile; echo "" >> ~/.bash_profile; echo "# Command Line Coda" >> ~/.bash_profile; echo 'function coda()' >> ~/.bash_profile; echo '{' >> ~/.bash_profil; echo 'open -a /Applications/Coda\ 2.app/Contents/MacOS/Coda\ 2 "$@"' >> ~/.bash_profile; echo '}' >> ~/.bash_profile;
