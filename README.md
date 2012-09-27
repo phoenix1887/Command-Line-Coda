@@ -9,4 +9,4 @@ coda filename1 filename2 filename3 filename4 etc...
 
 To install, copy and paste this line of code into your Terminal:
 
-echo "" >> ~/.bash_profile; echo "" >> ~/.bash_profile; echo "# Command Line Coda" >> ~/.bash_profile; echo 'function coda()' >> ~/.bash_profile; echo '{' >> ~/.bash_profile; echo 'open -a /Applications/Coda\ 2.app/Contents/MacOS/Coda\ 2 "$@"' >> ~/.bash_profile; echo '}' >> ~/.bash_profile;
+bp=~/.bash_profile; echo "" >> $bp; echo "" >> $bp; echo "# Command Line Coda" >> $bp; echo 'function coda()' >> $bp; echo '{' >> $bp; echo 'open -a /Applications/Coda\ 2.app/Contents/MacOS/Coda\ 2 "$@"' >> $bp; echo '}' >> $bp;
