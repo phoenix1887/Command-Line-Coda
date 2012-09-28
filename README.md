@@ -1,9 +1,9 @@
 Command-Line-Coda
 =================
 
-## Usage
-
 The popular Mac text editor gets its missing command line function! Open files and data in Coda / Coda 2 from the Command Line.
+
+## Usage
 
 Open one or multiple files with:
 
@@ -21,7 +21,7 @@ Copy and paste this into your Terminal:
 	IyBDb21tYW5kIExpbmUgQ29kYQpmdW5jdGlvbiBjb2RhKCkKewoJIyBkZWZpbmUgY29kYSBhcHAgcGF0aAoJY2w9Ii9BcHBsaWNhdGlvbnMvQ29kYSAyLmFwcC9Db250ZW50cy9NYWNPUy9Db2RhIDIiOwoJIyB0ZXN0IGZvciBjb2RhIGFwcAoJaWYgWyAhIC1mICIkY2wiIF07IHRoZW4gZWNobyAiV2hlcmUgaXMgeW91ciBDb2RhLmFwcCBmaWxlPyBGaW5kIGFuZCB0aGVuIHVwZGF0ZSBsb2NhdGlvbiBpbiB+Ly5iYXNoX3Byb2ZpbGUuIjsgZmk7CgkjIHRlc3QgZm9yIGNvbW1hbmQgbGluZSBpbnB1dHMKCWlmIFsgIiRAIiAhPSAiIiBdIDI+IC9kZXYvbnVsbDsgdGhlbgoJCSMgaW50ZXJwcmV0IGNvbW1hbmQgbGluZSBpbnB1dHMgYXMgZmlsZXMgYW5kIG9wZW4gdGhlbSB3aXRoIGNvZGEKCQlvcGVuIC1hICIkY2wiICIkQCI7CgllbHNlCgkJIyByZWFkIGZyb20gc3RhbmRhcmQgaW5wdXQgYW5kIGR1bXAgaW50byBhIHRlbXBvcmFyeSBmaWxlCgkJdG1wPWBta3RlbXAgIi90bXAvQ29kYVN0ZGluLlhYWFhYWCJgIi50eHQiOwoJCXdoaWxlIHJlYWQgZGF0YTsgZG8KCQkJZWNobyAiJHtkYXRhfSIgPj4gIiR0bXAiOwoJCWRvbmU7CgkJIyBvcGVuIHRlbXAgZmlsZSB3aXRoIGNvZGEKCQljb2RhICIkdG1wIjsKCWZpOwp9
 	' | base64 -D >> ~/.bash_profile;
 
-And then open a new terminal.
+And then open a new terminal to use coda.
 
 
 
@@ -51,7 +51,7 @@ You can manually add this code to your bash profile (~/.bash_profile):
 	}
   
 
-## To Do:
+## To Do
 
 - Flags? Do we need any?
 - Support the * character? coda Febru*
